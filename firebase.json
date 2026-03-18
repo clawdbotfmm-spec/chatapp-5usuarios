@@ -1,0 +1,16 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "database.rules.json",
+      ".claude/**",
+      ".git/**",
+      "generate-icons.html",
+      "node_modules/**"
+    ]
+  }
+}

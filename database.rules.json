@@ -1,0 +1,76 @@
+{
+  "rules": {
+    "chats": {
+      "$chatId": {
+        ".validate": "$chatId.matches(/^(daniel|diego|jordi|sara|sergio)_(daniel|diego|jordi|sara|sergio)$/)",
+        ".read": true,
+        "$messageId": {
+          ".write": true,
+          ".validate": "newData.hasChildren(['sender','type','content','ts','read'])",
+          "sender": {
+            ".validate": "newData.val().matches(/^(jordi|sara|daniel|diego|sergio)$/)"
+          },
+          "type": {
+            ".validate": "newData.val().matches(/^(text|image|video|link)$/)"
+          },
+          "content": {
+            ".validate": "newData.isString() && newData.val().length < 1048576"
+          },
+          "ts": {
+            ".validate": "newData.isNumber()"
+          },
+          "read": {
+            ".validate": "newData.isBoolean()"
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+    },
+    "projects": {
+      ".read": true,
+      "$projectId": {
+        ".write": true,
+        ".validate": "newData.hasChildren(['name','createdBy','createdAt'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 50"
+        },
+        "createdBy": {
+          ".validate": "newData.isString() && newData.val().matches(/^(Jordi|Sara|Daniel|Diego|Sergio)$/)"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "items": {
+          "$itemId": {
+            ".write": true,
+            ".validate": "newData.hasChildren(['type','content','author','ts'])",
+            "type": {
+              ".validate": "newData.val().matches(/^(text|link|image)$/)"
+            },
+            "content": {
+              ".validate": "newData.isString() && newData.val().length < 1048576"
+            },
+            "author": {
+              ".validate": "newData.isString() && newData.val().matches(/^(Jordi|Sara|Daniel|Diego|Sergio)$/)"
+            },
+            "ts": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "$other": {
+      ".read": false,
+      ".write": false
+    }
+  }
+}
