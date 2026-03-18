@@ -1,6 +1,12 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'>
-  <rect width='192' height='192' rx='38' fill='#1565C0'/>
-  <path d='M96 52c-26.5 0-48 17.9-48 40s21.5 40 48 40c5.3 0 10.4-.7 15.1-2L132 142v-20.3C141.7 113.4 144 103 144 92c0-22.1-21.5-40-48-40z' fill='white'/>
-  <rect x='72' y='78' width='48' height='7' rx='3.5' fill='#1565C0'/>
-  <rect x='72' y='93' width='32' height='7' rx='3.5' fill='#1565C0'/>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="42" fill="#1565C0"/>
+  <!-- Burbuja de chat -->
+  <path d="M56 48h80c8.8 0 16 7.2 16 16v52c0 8.8-7.2 16-16 16h-44l-24 22v-22h-12c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16z" fill="white"/>
+  <!-- Líneas de mensaje -->
+  <rect x="72" y="74" width="48" height="7" rx="3.5" fill="#1565C0"/>
+  <rect x="72" y="89" width="36" height="7" rx="3.5" fill="#90CAF9"/>
+  <rect x="72" y="104" width="42" height="7" rx="3.5" fill="#BBDEFB"/>
+  <!-- Indicador de usuarios -->
+  <circle cx="138" cy="56" r="14" fill="#4CAF50"/>
+  <text x="138" y="61" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="white">5</text>
 </svg>
